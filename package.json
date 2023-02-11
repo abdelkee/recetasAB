@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^2.2.1",
     "mongoose": "^6.9.1",
     "next": "latest",
     "next-pwa": "^5.6.0",
