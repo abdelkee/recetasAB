@@ -1,26 +1,19 @@
-import { useUser } from "@auth0/nextjs-auth0/client";
-import type { NextPage } from "next";
-import LoginButton from "../components/LoginButton";
-import LogoutButton from "../components/LogoutButton";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
-const Home: NextPage = () => {
-  const { user, error, isLoading } = useUser();
+export default function Akee() {
+  // ---- HOOKS
+  const { status } = useSession();
+  const router = useRouter();
+  // ---- FUNCTIONS
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
-
+  // ---- JSX
+  if (status === "loading") return <p>Loading ...</p>;
+  if (status === "unauthenticated")
+    return <button onClick={() => signIn()}>Log in</button>;
   return (
-    <>
-      {user ? (
-        <div>
-          <p>Home page</p>
-          <LogoutButton />
-        </div>
-      ) : (
-        <LoginButton />
-      )}
-    </>
+    <div>
+      <div>logged in</div>
+    </div>
   );
-};
-
-export default Home;
+}
