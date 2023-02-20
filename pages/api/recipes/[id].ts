@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { RecipeType } from '.'
 import Recipe from '../../../models/recipe'
+import { RecipeType } from '../../../types'
 import { connectToDatabase } from '../../../utils/db'
 
 connectToDatabase()
@@ -13,7 +13,9 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const { method, body, query: { id } } = req
+    const { method, body, query } = req
+    const { id } = query as { id: string }
+
     switch (method) {
         case 'GET':
             try {

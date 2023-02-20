@@ -1,20 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Recipe from '../../../models/recipe'
+import { RecipeType } from '../../../types'
 import { connectToDatabase } from '../../../utils/db'
 
 connectToDatabase()
 
-export type RecipeType = {
-  title: string,
-  ingredients: {
-    title: string,
-    measurment: string,
-    quantity: string
-  }[],
-  steps: {
-    description: string
-  }[]
-}
 type Data = {
   message: string,
 } | RecipeType[]

@@ -8,7 +8,8 @@ connectToDatabase()
 
 export default NextAuth({
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60
   },
   providers: [
     CredentialsProvider({
@@ -27,5 +28,10 @@ export default NextAuth({
         return user
       }
     })
-  ]
+  ],
+  theme: {
+    buttonText: 'Log in',
+    brandColor: '#84cc16',
+    logo: 'https://pngtree.com/freepng/cartoon-lemon-png-download_4484222.html'
+  }
 })

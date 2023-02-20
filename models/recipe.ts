@@ -8,14 +8,22 @@ const required_string = {
 
 const recipeSchema = new Schema({
     title: required_string,
+    image: {
+        type: String,
+        default: 'https://images.assetsdelivery.com/compings_v2/bsd555/bsd5552011/bsd555201101792.jpg'
+    },
+    mode: [{
+        type: String,
+        trim: true,
+        default: 'horno'
+    }],
+    duration: Number,
     ingredients: [{
         title: required_string,
         measurement: required_string,
         quantity: required_string
     }],
-    steps: [{
-        description: required_string
-    }]
+    steps: [required_string]
 }, {
     timestamps: false,
     versionKey: false

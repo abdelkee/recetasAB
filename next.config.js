@@ -6,4 +6,11 @@ const withPWA = require("next-pwa")({
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
   reactStrictMode: true,
+  images: {
+    domains: [
+      "worldfoodtour.co.uk",
+      "static.onecms.io",
+      "images.assetsdelivery.com",
+    ],
+  },
 });

@@ -1,19 +1,13 @@
-import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export default function Akee() {
+export default function HomePage() {
   // ---- HOOKS
-  const { status } = useSession();
   const router = useRouter();
+  useEffect(() => {
+    router.replace("/recipes");
+  }, []);
   // ---- FUNCTIONS
-
   // ---- JSX
-  if (status === "loading") return <p>Loading ...</p>;
-  if (status === "unauthenticated")
-    return <button onClick={() => signIn()}>Log in</button>;
-  return (
-    <div>
-      <div>logged in</div>
-    </div>
-  );
+  return null;
 }
