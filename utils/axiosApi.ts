@@ -1,9 +1,11 @@
 import axios from "axios";
 import { RecipeData, RecipeType } from "../types";
 
-const url = process.env.NODE_ENV === 'production'
-    ? 'https://recetas-ab.vercel.app/api'
-    : 'http://localhost:3000/api'
+// const url = process.env.NODE_ENV === 'production'
+//     ? 'https://recetas-ab.vercel.app/api'
+//     : 'http://localhost:3000/api'
+
+const url = 'https://recetas-ab.vercel.app/api'
 
 export const axiosApi = axios.create({
     baseURL: url
