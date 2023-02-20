@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdLocalDining, MdOutlineAdd, MdPhotoCamera } from "react-icons/md";
@@ -34,7 +35,11 @@ export default function NewRecipe() {
     handleSubmit: handleStepSubmit,
     reset: resetSteps,
   } = useForm();
+
+  const { replace } = useRouter();
   // ---- FUNCTIONS
+
+  if (data) replace("/recipes");
 
   const removeIngredient = (title: string) => {
     setIngredients((curr) => curr.filter((ingr) => ingr.title !== title));
