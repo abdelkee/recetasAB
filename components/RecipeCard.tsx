@@ -15,7 +15,7 @@ export default function RecipeCard({ recipe }: Props) {
     <Link
       href={"/recipes/" + recipe._id}
       role={"button"}
-      className="w-full p-4 overflow-hidden bg-white border border-gray-200 rounded shadow"
+      className="w-full overflow-hidden bg-white border border-gray-200 rounded shadow"
     >
       <section className="relative aspect-square">
         <Image alt="" src={recipe?.image || ""} fill className="object-cover" />
