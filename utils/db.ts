@@ -1,4 +1,4 @@
-import { connect, ConnectionStates } from 'mongoose';
+import mongoose, { connect, ConnectionStates } from 'mongoose';
 
 const conn = {
     isConnected: 0
@@ -11,3 +11,5 @@ export async function connectToDatabase() {
 
     console.log('connected to db')
 }
+
+mongoose.set('strictQuery', true)

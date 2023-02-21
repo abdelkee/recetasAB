@@ -33,11 +33,16 @@ export default function Recipe() {
   return (
     <AuthWrapper>
       <Header title={recipe.title} />
-      <section className="my-20 px-2">
-        <div className="relative w-full aspect-video">
-          <Image alt={recipe.title} src={recipe?.image || ""} fill />
+      <section className="px-2 my-20">
+        <div className="relative w-full overflow-hidden bg-white border border-gray-300 rounded aspect-video">
+          <Image
+            alt={recipe.title}
+            src={recipe?.image || ""}
+            fill
+            className="object-cover p-2"
+          />
         </div>
-        <div className="flex py-4 justify-between items-center space-x-4">
+        <div className="flex items-center justify-between py-4 space-x-4">
           <Switch
             title="ingredients"
             currTab={tab}

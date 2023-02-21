@@ -15,13 +15,16 @@ export default function RecipeCard({ recipe }: Props) {
     <Link
       href={"/recipes/" + recipe._id}
       role={"button"}
-      className="rounded overflow-hidden shadow"
+      className="overflow-hidden border border-gray-200 rounded shadow"
     >
-      <section className="relative aspect-square object-cover">
-        <Image alt="" src={recipe?.image || ""} fill />
-        <div className="absolute -bottom-4 left-0 w-full h-10 flex items-center px-2 -space-x-1">
+      <section className="relative aspect-square">
+        <Image alt="" src={recipe?.image || ""} fill className="object-cover" />
+        <div className="absolute left-0 flex items-center w-full h-10 px-2 -space-x-1 -bottom-4">
           {recipe.mode.map((mode) => (
-            <div className="bg-slate-50 border border-slate-200 rounded-full w-7 h-7 flex items-center justify-center z-20">
+            <div
+              className="z-20 flex items-center justify-center border rounded-full bg-slate-50 border-slate-200 w-7 h-7"
+              key={mode}
+            >
               <Image
                 alt={mode}
                 src={`/icons/${mode}.png`}
@@ -32,7 +35,7 @@ export default function RecipeCard({ recipe }: Props) {
           ))}
         </div>
       </section>
-      <section className="relative p-4 flex flex-col items-center bg-white">
+      <section className="relative flex flex-col items-center p-4 bg-white">
         <h2 className="font-medium tracking-wider capitalize">
           {recipe.title}
         </h2>
