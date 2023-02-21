@@ -19,17 +19,17 @@ export default function RecipeCard({ recipe }: Props) {
     >
       <section className="relative aspect-square">
         <Image alt="" src={recipe?.image || ""} fill className="object-cover" />
-        <div className="absolute left-0 flex items-center w-full h-10 px-2 -space-x-1 -top-2">
+        <div className="absolute flex items-center w-full h-10 px-2 -space-x-1 left-2 top-2">
           {recipe.mode.map((mode) => (
             <div
-              className="z-20 flex items-center justify-center w-8 h-8 border rounded-full bg-slate-50 border-slate-200"
+              className="z-20 flex items-center justify-center w-10 h-10 border rounded-full bg-slate-50 border-slate-200"
               key={mode}
             >
               <Image
                 alt={mode}
                 src={`/icons/${mode}.png`}
-                width={18}
-                height={18}
+                width={20}
+                height={20}
               />
             </div>
           ))}
