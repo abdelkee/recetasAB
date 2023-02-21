@@ -140,7 +140,7 @@ export default function NewRecipe() {
             className="flex flex-col items-center justify-center flex-1 p-4 space-y-4 text-lg font-bold tracking-wider bg-white border border-gray-300 shadow aspect-square"
           >
             <h3>Ingredients</h3>
-            <span className="flex items-center justify-center w-10 h-10 p-4 rounded-full bg-lime-50 text-lime-500">
+            <span className="flex items-center justify-center w-10 h-10 p-4 rounded-full bg-lime-500 text-lime-50">
               {ingredients.length}
             </span>
           </button>
