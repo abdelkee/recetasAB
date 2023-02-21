@@ -8,6 +8,7 @@ import IngredientsList from "../../components/IngredientsList";
 import StepsList from "../../components/StepsList";
 import Switch from "../../components/Switch";
 import { getRecipe } from "../../utils/axiosApi";
+import Loader from "../../utils/Loader";
 
 type tabType = "ingredients" | "steps";
 export default function Recipe() {
@@ -26,7 +27,7 @@ export default function Recipe() {
   console.log(recipe?.image);
 
   // ---- FUNCTIONS
-  if (isLoading) return <p>loading...</p>;
+  if (isLoading) return <Loader />;
   if (isError) return <p>Error...</p>;
 
   // ---- JSX

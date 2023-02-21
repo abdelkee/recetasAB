@@ -10,11 +10,11 @@ export default function Header({ title }: Props) {
   // ---- FUNCTIONS
   // ---- JSX
   return (
-    <div className="py-3 px-4 shadow bg-white flex fixed top-0 left-0 w-full z-30">
+    <div className="fixed top-0 left-0 z-30 flex w-full px-4 py-3 bg-white shadow">
       <button onClick={() => replace("/recipes")}>
         <MdOutlineKeyboardBackspace size={"24px"} />
       </button>
-      <h3 className="text-lg font-medium up flex-1 text-center">{title}</h3>
+      <h3 className="flex-1 text-xl font-medium text-center up">{title}</h3>
     </div>
   );
 }

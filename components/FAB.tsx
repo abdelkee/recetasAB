@@ -9,7 +9,7 @@ export default function FAB({}: Props) {
   return (
     <Link
       href={"/newRecipe"}
-      className="fixed p-3 rounded-full shadow text-lime-50 bg-lime-500 bottom-4 right-4"
+      className="fixed p-4 rounded-full shadow text-lime-50 bg-lime-500 bottom-6 right-6"
     >
       <MdOutlineAdd size={"24px"} />
     </Link>

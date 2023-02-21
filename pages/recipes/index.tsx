@@ -3,6 +3,7 @@ import AuthWrapper from "../../components/AuthWrapper";
 import FAB from "../../components/FAB";
 import RecipeCard from "../../components/RecipeCard";
 import { getRecipes } from "../../utils/axiosApi";
+import Loader from "../../utils/Loader";
 
 export default function Recipes() {
   // ---- HOOKS
@@ -15,7 +16,7 @@ export default function Recipes() {
   if (isLoading)
     return (
       <AuthWrapper>
-        <p>loading ...</p>
+        <Loader />
       </AuthWrapper>
     );
   if (isError)
@@ -26,7 +27,7 @@ export default function Recipes() {
     );
   return (
     <AuthWrapper>
-      <div className="grid grid-cols-2 gap-4 px-2 py-20">
+      <div className="flex flex-col items-center w-full px-4 py-24 space-y-4">
         {data?.map((recipe) => {
           const recipeData = {
             _id: recipe._id,

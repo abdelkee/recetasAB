@@ -1,5 +1,6 @@
 import { signIn, useSession } from "next-auth/react";
 import { MdOutlineVpnKey } from "react-icons/md";
+import Loader from "../utils/Loader";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ export default function AuthWrapper({ children }: Props) {
   const { status } = useSession();
   // ---- FUNCTIONS
   // ---- JSX
-  if (status === "loading") return <p>Loading ...</p>;
+  if (status === "loading") return <Loader />;
   if (status === "unauthenticated")
     return (
       <button

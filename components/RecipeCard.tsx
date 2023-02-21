@@ -15,28 +15,28 @@ export default function RecipeCard({ recipe }: Props) {
     <Link
       href={"/recipes/" + recipe._id}
       role={"button"}
-      className="overflow-hidden border border-gray-200 rounded shadow"
+      className="w-full p-4 overflow-hidden bg-white border border-gray-200 rounded shadow"
     >
       <section className="relative aspect-square">
         <Image alt="" src={recipe?.image || ""} fill className="object-cover" />
-        <div className="absolute left-0 flex items-center w-full h-10 px-2 -space-x-1 -bottom-4">
+        <div className="absolute left-0 flex items-center w-full h-10 px-2 -space-x-1 -top-2">
           {recipe.mode.map((mode) => (
             <div
-              className="z-20 flex items-center justify-center border rounded-full bg-slate-50 border-slate-200 w-7 h-7"
+              className="z-20 flex items-center justify-center w-8 h-8 border rounded-full bg-slate-50 border-slate-200"
               key={mode}
             >
               <Image
                 alt={mode}
                 src={`/icons/${mode}.png`}
-                width={16}
-                height={16}
+                width={18}
+                height={18}
               />
             </div>
           ))}
         </div>
       </section>
       <section className="relative flex flex-col items-center p-4 bg-white">
-        <h2 className="font-medium tracking-wider capitalize">
+        <h2 className="text-xl font-medium tracking-wider text-center capitalize">
           {recipe.title}
         </h2>
       </section>
