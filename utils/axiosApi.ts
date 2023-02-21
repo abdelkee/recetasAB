@@ -5,8 +5,8 @@ import { RecipeData, RecipeType } from "../types";
 //     ? 'https://recetas-ab.vercel.app/api'
 //     : 'http://localhost:3000/api'
 
-// const url = 'https://recetas-ab.vercel.app/api'
-const url = 'http://localhost:3000/api'
+const url = 'https://recetas-ab.vercel.app/api'
+// const url = 'http://localhost:3000/api'
 
 export const axiosApi = axios.create({
     baseURL: url,
