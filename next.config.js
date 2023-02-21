@@ -11,6 +11,8 @@ module.exports = withPWA({
       "worldfoodtour.co.uk",
       "static.onecms.io",
       "images.assetsdelivery.com",
+      "cdn2.cocinadelirante.com",
+      "iperu.pe",
     ],
   },
 });
