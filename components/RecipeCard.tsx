@@ -9,7 +9,6 @@ export default function RecipeCard({ recipe }: Props) {
   // ---- HOOKS
   // ---- FUNCTIONS
   // ---- JSX
-  console.log(recipe.mode);
 
   return (
     <Link
@@ -17,28 +16,28 @@ export default function RecipeCard({ recipe }: Props) {
       role={"button"}
       className="w-full overflow-hidden bg-white border border-gray-200 rounded shadow"
     >
-      <section className="relative aspect-square">
-        <Image alt="" src={recipe?.image || ""} fill className="object-cover" />
-        <div className="absolute flex items-center w-full h-10 px-2 -space-x-1 left-2 top-2">
-          {recipe.mode.map((mode) => (
-            <div
-              className="z-20 flex items-center justify-center w-10 h-10 border rounded-full bg-slate-50 border-slate-200"
-              key={mode}
-            >
-              <Image
-                alt={mode}
-                src={`/icons/${mode}.png`}
-                width={20}
-                height={20}
-              />
-            </div>
-          ))}
+      <section className="h-[100px] flex p-1 space-x-4 items-center">
+        <div className="relative aspect-square h-full overflow-hidden rounded-sm">
+          <Image
+            alt=""
+            src={recipe?.image || ""}
+            fill
+            className="object-cover"
+          />
         </div>
-      </section>
-      <section className="relative flex flex-col items-center p-4 bg-white">
-        <h2 className="text-xl font-medium tracking-wider text-center capitalize">
-          {recipe.title}
-        </h2>
+        <div className="py-2">
+          <h2 className="font-medium capitalize mb-1">{recipe.title}</h2>
+          <div className="flex space-x-2 items-center">
+            {recipe.mode.map((mode, i, arr) => (
+              <>
+                <h4 className="capitalize text-gray-400 text-sm">{mode}</h4>
+                {i !== arr.length - 1 && (
+                  <span className="text-gray-400">&bull;</span>
+                )}
+              </>
+            ))}
+          </div>
+        </div>
       </section>
     </Link>
   );

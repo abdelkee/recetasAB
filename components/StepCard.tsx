@@ -31,7 +31,7 @@ export default function StepCard({
           className={`${
             isChecked && "border-l-2 border-l-lime-500"
           } py-1 px-2 rounded-sm bg-yellow-200 font-medium text-sm`}
-        >{`Step ${index + 1}`}</span>
+        >{`Paso ${index + 1}`}</span>
         {!removable && (
           <button onClick={toggle}>
             {isChecked ? (

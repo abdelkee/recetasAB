@@ -10,10 +10,10 @@ import Switch from "../../components/Switch";
 import { getRecipe } from "../../utils/axiosApi";
 import Loader from "../../utils/Loader";
 
-type tabType = "ingredients" | "steps";
+type tabType = "Ingredientes" | "Pasos";
 export default function Recipe() {
   // ---- HOOKS
-  const [tab, setTab] = useState<tabType>("ingredients");
+  const [tab, setTab] = useState<tabType>("Ingredientes");
   const router = useRouter();
   const id = router.query.id as string;
   const {
@@ -34,7 +34,7 @@ export default function Recipe() {
   return (
     <AuthWrapper>
       <Header title={recipe.title} />
-      <section className="px-2 my-20">
+      <section className="px-2 py-20">
         <div className="relative w-full overflow-hidden bg-white border border-gray-300 rounded aspect-video">
           <Image
             alt={recipe.title}
@@ -45,19 +45,21 @@ export default function Recipe() {
         </div>
         <div className="flex items-center justify-between py-4 space-x-4">
           <Switch
-            title="ingredients"
+            title="Ingredientes"
             currTab={tab}
             defaultChecked={true}
-            switchTab={() => setTab("ingredients")}
+            switchTab={() => setTab("Ingredientes")}
           />
           <Switch
-            title="steps"
+            title="Pasos"
             currTab={tab}
-            switchTab={() => setTab("steps")}
+            switchTab={() => setTab("Pasos")}
           />
         </div>
-        {tab === "ingredients" && <IngredientsList data={recipe.ingredients} />}
-        {tab === "steps" && <StepsList data={recipe.steps} />}
+        {tab === "Ingredientes" && (
+          <IngredientsList data={recipe.ingredients} />
+        )}
+        {tab === "Pasos" && <StepsList data={recipe.steps} />}
       </section>
     </AuthWrapper>
   );

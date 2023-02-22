@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import AuthWrapper from "../../components/AuthWrapper";
 import FAB from "../../components/FAB";
+import Header from "../../components/Header";
 import RecipeCard from "../../components/RecipeCard";
 import { getRecipes } from "../../utils/axiosApi";
 import Loader from "../../utils/Loader";
@@ -27,6 +28,7 @@ export default function Recipes() {
     );
   return (
     <AuthWrapper>
+      <Header title="Recetas desbloqueadas" back={false} />
       <div className="flex flex-col items-center w-full px-4 py-24 space-y-4">
         {data?.map((recipe) => {
           const recipeData = {
