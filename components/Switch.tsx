@@ -15,7 +15,7 @@ export default function Switch({ title, currTab, switchTab }: Props) {
   return (
     <button
       role={"button"}
-      className={`${isActive} cursor-pointer p-2 rounded-sm flex-1`}
+      className={`${isActive} cursor-pointer p-3 rounded-sm flex-1`}
       onClick={switchTab}
     >
       {title}

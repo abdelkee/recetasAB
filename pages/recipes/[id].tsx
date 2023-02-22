@@ -43,7 +43,7 @@ export default function Recipe() {
             className="object-cover p-2"
           />
         </div>
-        <div className="flex items-center justify-between py-4 space-x-4 sticky top-9">
+        <div className="flex items-center justify-between py-4 space-x-4 sticky top-10">
           <Switch
             title="Ingredientes"
             currTab={tab}
